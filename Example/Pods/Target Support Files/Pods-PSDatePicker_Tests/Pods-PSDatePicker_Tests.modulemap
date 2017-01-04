@@ -1,0 +1,6 @@
+framework module Pods_PSDatePicker_Tests {
+  umbrella header "Pods-PSDatePicker_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

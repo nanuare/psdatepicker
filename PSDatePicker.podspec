@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'PSDatePicker'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of PSDatePicker.'
+  s.summary          = 'This cocoapods is for date picking.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,20 +17,18 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'this pods can date pick and time pick. it has many options for datepicking.'
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/PSDatePicker'
+  s.homepage         = 'https://github.com/nanuare/psdatepicker'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MPL-2.0', :file => 'LICENSE' }
   s.author           = { 'PeaceKim' => 'me@peacekim.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/PSDatePicker.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/nanuare/psdatepicker.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'PSDatePicker/Classes/**/*'
+  s.requires_arc = true
   
   # s.resource_bundles = {
   #   'PSDatePicker' => ['PSDatePicker/Assets/*.png']

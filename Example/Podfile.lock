@@ -1,0 +1,16 @@
+PODS:
+  - PSDatePicker (0.1.0)
+
+DEPENDENCIES:
+  - PSDatePicker (from `../`)
+
+EXTERNAL SOURCES:
+  PSDatePicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PSDatePicker: e7e7ee03d4e29535abbf6310439f1ec7e8071cdb
+
+PODFILE CHECKSUM: 7daf552a764074d0c781a794b8711835abbe28bb
+
+COCOAPODS: 1.1.1
