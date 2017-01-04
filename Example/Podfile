@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PSDatePicker_Example' do
+  pod 'PSDatePicker', :path => '../'
+
+  target 'PSDatePicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
