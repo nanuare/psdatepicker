@@ -22,7 +22,7 @@ pod "PSDatePicker"
 
 ## Author
 
-PeaceKim, me@peacekim.com
+PeaceKim (peacekim.com)
 
 ## License
 
