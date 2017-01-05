@@ -31,25 +31,11 @@ public class PSDatePicker:UIViewController {
     
     open static func getViewController()->UIViewController? {
        
+        let podBundle = Bundle(for: PSDatePicker.self)
+        let storyboard = UIStoryboard(name: "PSDateSB", bundle: podBundle)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PSDatePicker")
         
-        for bun in Bundle.allFrameworks {
-            if (bun.builtInPlugInsPath?.contains("PSDatePicker.framework/PlugIns"))!{
-                let mainStoryboard: UIStoryboard = UIStoryboard(name:"PSDateSB", bundle: bun )
-                let vc = mainStoryboard.instantiateViewController(withIdentifier: "PSDatePicker")
-    
-                return vc
-            }
-        }
-        
-        return nil
-        
+        return vc
     }
-    
-    
-    func getVc(_ sbName:String,_ vcName:String) -> UIViewController {
-        let mainStoryboard: UIStoryboard = UIStoryboard(name:sbName, bundle: nil)
-        return mainStoryboard.instantiateViewController(withIdentifier: vcName)
-    }
-
     
 }
