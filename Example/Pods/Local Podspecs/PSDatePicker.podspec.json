@@ -1,6 +1,6 @@
 {
   "name": "PSDatePicker",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "summary": "This cocoapods is for date picking.",
   "description": "this pods can date pick and time pick. it has many options for datepicking.",
   "homepage": "https://github.com/nanuare/psdatepicker",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/nanuare/psdatepicker.git",
-    "tag": "0.1.6"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"

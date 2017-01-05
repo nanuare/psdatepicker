@@ -77,7 +77,7 @@ extension PSDatePicker {
     }
     
     func initDates() {
-        
+        self.btnMonth.setTitle("\(DateHelper.getMonth(date: Date()))", for: .normal)
     }
 }
 

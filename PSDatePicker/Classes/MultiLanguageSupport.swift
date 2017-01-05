@@ -14,9 +14,37 @@ public enum Country {
     case jp
 }
 
+private enum monthEn {
+   
+}
+
 var language:Country = .jp
 
 class Word {
+    
+    static var nextWeek:String {
+        get {
+            switch language {
+            case .en: return "Next Week"
+            case .ko: return "다음주"
+            case .jp: return "来週"
+            }
+        }
+        set {}
+    }
+    
+    static var priorWeek:String {
+        get {
+            switch language {
+            case .en: return "Prior Week"
+            case .ko: return "이전주"
+            case .jp: return "先週"
+            }
+        }
+        set {}
+    }
+
+    
     static var confirm:String {
         get {
             switch language {
@@ -48,6 +76,14 @@ class Word {
             }
         }
         set{}
+    }
+    
+    static func getMonth(index:Int)->String{
+        switch language {
+        case .en : return "en_US"
+        case .ko : return "ko_KR"
+        case .jp : return "ja_JP"
+        }
     }
     
     static func getLocale(country:Country)->String{
