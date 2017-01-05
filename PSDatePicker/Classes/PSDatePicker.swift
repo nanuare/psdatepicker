@@ -29,29 +29,20 @@ public class PSDatePicker:UIViewController {
         
     }
     
-    open static func getViewController()->PSDatePicker? {
-       // let mainStoryboard: UIStoryboard = UIStoryboard(name:"PSDateSB", bundle: nil)
-      //  return mainStoryboard.instantiateViewController(withIdentifier: "PSDatePicker") as! PSDatePicker
+    open static func getViewController()->UIViewController? {
+       
         
-        
-        if let cls:AnyClass = NSClassFromString("PSDatePicker") {
-            let myBundle = Bundle.init(for: cls)
-            let mainStoryboard: UIStoryboard = UIStoryboard(name:"PSDateSB", bundle: myBundle )
-            return mainStoryboard.instantiateViewController(withIdentifier: "PSDatePicker") as! PSDatePicker
-            
-        } else {
-            let podBundle = Bundle(for: PSDatePicker.self)
-            let bundleURL = podBundle.url(forResource: "PSDatePicker", withExtension: "bundle")
-          //  let bundle = Bundle(url: bundleURL!)!
-            
-            
-            let mainStoryboard: UIStoryboard = UIStoryboard(name:"PSDateSB", bundle: podBundle )
-            return mainStoryboard.instantiateViewController(withIdentifier: "PSDatePicker") as! PSDatePicker
+        for bun in Bundle.allFrameworks {
+            if (bun.builtInPlugInsPath?.contains("PSDatePicker.framework/PlugIns"))!{
+                let mainStoryboard: UIStoryboard = UIStoryboard(name:"PSDateSB", bundle: bun )
+                let vc = mainStoryboard.instantiateViewController(withIdentifier: "PSDatePicker")
+    
+                return vc
+            }
         }
-
         
+        return nil
         
-       // return self.getVc("PSDateSB","PSDatePicker") as! PSDatePicker
     }
     
     
