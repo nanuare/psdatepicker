@@ -13,18 +13,45 @@ let SB_PSDATE   = "PSDateSB"
 
 public class PSDatePicker:UIViewController {
    
+    @IBOutlet weak var btnConfirm: UIButton!
+    @IBOutlet weak var btnCancel: UIButton!
+    
+    @IBOutlet weak var bgAll: UIView!
+    @IBOutlet weak var bgTranslucency: UIView!
+    
+    
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.initViews()
     }
     
-    open static func getViewController() -> UIViewController {
-        return self.getVc(SB_PSDATE, MODULE_NAME)
-    }
+   
+   
     
 }
 
+// view control
+extension PSDatePicker {
+    func initViews() {
+        self.btnConfirm.layer.cornerRadius = 4
+        self.btnCancel .layer.cornerRadius = 4
+        
+        
+    }
+}
+
+// Actions
+extension PSDatePicker {
+    @IBAction func goCancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func goConfirm(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// Util
 extension PSDatePicker {
     static func getbundle()->Bundle {
         let podBundle = Bundle(for: PSDatePicker.self)
@@ -35,5 +62,17 @@ extension PSDatePicker {
     static func getVc(_ sbName:String, _ vcName:String)->UIViewController {
         let storyboard = UIStoryboard(name: sbName, bundle: getbundle())
         return storyboard.instantiateViewController(withIdentifier: vcName)
+    }
+}
+
+/* Open */
+extension PSDatePicker {
+    open static func getViewController() -> UIViewController {
+        return self.getVc(SB_PSDATE, MODULE_NAME)
+    }
+    
+    open static func showDatePicker(_ target:UIViewController){
+        let vc = PSDatePicker.getViewController()
+        target.present(vc, animated: true, completion: nil)
     }
 }

@@ -22,13 +22,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func goButton(_ sender: UIButton) {
-        
-        let vc = PSDatePicker.getViewController()
-        
-        self.present(vc, animated: true, completion: nil)
+        PSDatePicker.showDatePicker(self)
     }
     
-  
-
 }
 
