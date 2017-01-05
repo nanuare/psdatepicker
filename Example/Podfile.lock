@@ -1,5 +1,5 @@
 PODS:
-  - PSDatePicker (0.1.5)
+  - PSDatePicker (0.1.6)
 
 DEPENDENCIES:
   - PSDatePicker (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PSDatePicker: a15a8d3d3b9cde0907a63322a39acd32be13d025
+  PSDatePicker: ea24ed0a0a1fc638f6c04f0c4060425a2145ac31
 
 PODFILE CHECKSUM: 7daf552a764074d0c781a794b8711835abbe28bb
 

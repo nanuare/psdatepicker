@@ -15,7 +15,7 @@
 		B517891CE9759FA4531142C353BEC178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		B551F58B753C58B9E6144D520E6D4C82 /* Pods-PSDatePicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E72860FBD3843FD96BDCF9361218260 /* Pods-PSDatePicker_Tests-dummy.m */; };
 		B74B78937216A9537710B8B5C0829772 /* Pods-PSDatePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD29ECF2A3C9DFB97299BE9387D53A4 /* Pods-PSDatePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8ACB9CA1E1E0E7400E9DD5F /* PSDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */; };
+		B8E118611E1E106F00287FD2 /* PSDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */; };
 		CA9D08349D8A7A7EF396FB8B093A813B /* Pods-PSDatePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF23058D5F71908EA7926E31B3F9940 /* Pods-PSDatePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4BC315DFDC80FD3C6146D544593A4E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		DBE654681A4FF66EF4F3F99B455622E8 /* Pods-PSDatePicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D56C0F650737ED71B2B542D9BE47968A /* Pods-PSDatePicker_Example-dummy.m */; };
@@ -408,7 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8ACB9CA1E1E0E7400E9DD5F /* PSDateSB.storyboard in Resources */,
+				B8E118611E1E106F00287FD2 /* PSDateSB.storyboard in Resources */,
 				F77BA86DD979E6ED670F9544A7A24D62 /* PSDatePicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
