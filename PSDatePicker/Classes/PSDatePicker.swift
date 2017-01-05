@@ -32,6 +32,14 @@ public class PSDatePicker:UIViewController {
     open static func getViewController()->UIViewController? {
        
         let podBundle = Bundle(for: PSDatePicker.self)
+        
+        print("path :  \(podBundle.bundlePath)/PSDatePicker.bundle")
+        for bn in Bundle.allFrameworks {
+            print("bundle frame id   : \(bn.bundleIdentifier)")
+            print("bundle frame path : \(bn.bundlePath)")
+        }
+        
+        
         let storyboard = UIStoryboard(name: "PSDateSB", bundle: podBundle)
         let vc = storyboard.instantiateViewController(withIdentifier: "PSDatePicker")
         
