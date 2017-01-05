@@ -11,10 +11,11 @@
 		71DEC2933B78E29854EECB431DD69C48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		7E8D55E4DC66034287F7D14D9CD7BC2B /* PSDatePicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC0F2745911E0FF05FD43215BAF25EEA /* PSDatePicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A886574FC7C86D282FE1315CB76143F3 /* PSDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EB84528C87C6CDDA71FDF6D825BB36 /* PSDatePicker-dummy.m */; };
-		AAD8B1D5AD4FEC516352EA45AAD45D71 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72297E1E322AB0DEE51F2AC3A10CA8BA /* ReplaceMe.swift */; };
+		AAD8B1D5AD4FEC516352EA45AAD45D71 /* PSDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72297E1E322AB0DEE51F2AC3A10CA8BA /* PSDatePicker.swift */; };
 		B517891CE9759FA4531142C353BEC178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		B551F58B753C58B9E6144D520E6D4C82 /* Pods-PSDatePicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E72860FBD3843FD96BDCF9361218260 /* Pods-PSDatePicker_Tests-dummy.m */; };
 		B74B78937216A9537710B8B5C0829772 /* Pods-PSDatePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD29ECF2A3C9DFB97299BE9387D53A4 /* Pods-PSDatePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8ACB9A41E1DECFB00E9DD5F /* PSDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8ACB9361E1CED4100E9DD5F /* PSDateSB.storyboard */; };
 		CA9D08349D8A7A7EF396FB8B093A813B /* Pods-PSDatePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF23058D5F71908EA7926E31B3F9940 /* Pods-PSDatePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBE654681A4FF66EF4F3F99B455622E8 /* Pods-PSDatePicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D56C0F650737ED71B2B542D9BE47968A /* Pods-PSDatePicker_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -43,7 +44,7 @@
 		615844729113BDC3665E40D3E425AE3E /* Pods-PSDatePicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PSDatePicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		64527E068A43713AC1AD4835138A50EF /* Pods-PSDatePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E72860FBD3843FD96BDCF9361218260 /* Pods-PSDatePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PSDatePicker_Tests-dummy.m"; sourceTree = "<group>"; };
-		72297E1E322AB0DEE51F2AC3A10CA8BA /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		72297E1E322AB0DEE51F2AC3A10CA8BA /* PSDatePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PSDatePicker.swift; sourceTree = "<group>"; };
 		765A59AC67C08B1545FA04406DEBB3E1 /* Pods-PSDatePicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		85760E4767DCD0430F2FEE9172D971F0 /* PSDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FA9A193568EB40D55E954D2A651431 /* Pods-PSDatePicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PSDatePicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		8F671E48CB7E84873E92924104B9DF5A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B6C04B6B1C774E2678F075110060FFDC /* Pods-PSDatePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PSDatePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B8ACB9361E1CED4100E9DD5F /* PSDateSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PSDateSB.storyboard; path = Assets/PSDateSB.storyboard; sourceTree = "<group>"; };
 		BC0F2745911E0FF05FD43215BAF25EEA /* PSDatePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSDatePicker-umbrella.h"; sourceTree = "<group>"; };
 		C2D2F5892F804184ACD941813F967B40 /* Pods-PSDatePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A4E33A70A5B4C9C36DB1F890D8DD13 /* Pods-PSDatePicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A53D6404AE15102188A04F0B98D651A8 /* Classes */,
+				B8ACB9361E1CED4100E9DD5F /* PSDateSB.storyboard */,
 			);
 			path = PSDatePicker;
 			sourceTree = "<group>";
@@ -158,7 +161,7 @@
 		A53D6404AE15102188A04F0B98D651A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				72297E1E322AB0DEE51F2AC3A10CA8BA /* ReplaceMe.swift */,
+				72297E1E322AB0DEE51F2AC3A10CA8BA /* PSDatePicker.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				6094387090F6300A4538A612A1FF202F /* Sources */,
 				130ECEF27527DE2544222FB2FE737B35 /* Frameworks */,
 				61978A14D7EDADB432549AE624D9B9EC /* Headers */,
+				B8ACB9A31E1DECF600E9DD5F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -310,7 +314,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					55351A663C0E75EF00DEA96091862F3D = {
@@ -343,6 +347,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		B8ACB9A31E1DECF600E9DD5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8ACB9A41E1DECFB00E9DD5F /* PSDateSB.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0F36464317E05C132B96C2D90A0D8A7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -357,7 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A886574FC7C86D282FE1315CB76143F3 /* PSDatePicker-dummy.m in Sources */,
-				AAD8B1D5AD4FEC516352EA45AAD45D71 /* ReplaceMe.swift in Sources */,
+				AAD8B1D5AD4FEC516352EA45AAD45D71 /* PSDatePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PSDatePicker'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'This cocoapods is for date picking.'
 
 # This description is used to generate tags and improve search results.
@@ -29,10 +29,11 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source_files = 'PSDatePicker/Classes/**/*'
   s.requires_arc = true
-  
-  # s.resource_bundles = {
-  #   'PSDatePicker' => ['PSDatePicker/Assets/*.png']
-  # }
+  s.module_name  = 'PSDatePicker'
+
+  s.resource_bundles = {
+    'PSDatePicker' => ['Pod/Classes/**/*.{storyboard,xib}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
