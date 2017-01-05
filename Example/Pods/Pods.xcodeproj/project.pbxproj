@@ -15,6 +15,10 @@
 		B517891CE9759FA4531142C353BEC178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		B551F58B753C58B9E6144D520E6D4C82 /* Pods-PSDatePicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E72860FBD3843FD96BDCF9361218260 /* Pods-PSDatePicker_Tests-dummy.m */; };
 		B74B78937216A9537710B8B5C0829772 /* Pods-PSDatePicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAD29ECF2A3C9DFB97299BE9387D53A4 /* Pods-PSDatePicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B824EA781E1E3CA000D6A237 /* MultiLanguageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAAACD1E1E389A0061011E /* MultiLanguageSupport.swift */; };
+		B824EA791E1E3CA300D6A237 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAAAD01E1E39F10061011E /* DateHelper.swift */; };
+		B8DAAACE1E1E389A0061011E /* MultiLanguageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAAACD1E1E389A0061011E /* MultiLanguageSupport.swift */; };
+		B8DAAAD11E1E39F10061011E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DAAAD01E1E39F10061011E /* DateHelper.swift */; };
 		B8E118611E1E106F00287FD2 /* PSDateSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */; };
 		CA9D08349D8A7A7EF396FB8B093A813B /* Pods-PSDatePicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AF23058D5F71908EA7926E31B3F9940 /* Pods-PSDatePicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4BC315DFDC80FD3C6146D544593A4E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
@@ -64,6 +68,8 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB9C43BCB74ED9D4F5E7780FB335E863 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6C04B6B1C774E2678F075110060FFDC /* Pods-PSDatePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PSDatePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B8DAAACD1E1E389A0061011E /* MultiLanguageSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLanguageSupport.swift; sourceTree = "<group>"; };
+		B8DAAAD01E1E39F10061011E /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		C2D2F5892F804184ACD941813F967B40 /* Pods-PSDatePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C6A4E33A70A5B4C9C36DB1F890D8DD13 /* Pods-PSDatePicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C8C3DDA84E883A03B8FF2DEC1D91C313 /* ResourceBundle-PSDatePicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-PSDatePicker-Info.plist"; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 		7A09364B20FC14ABA909FFDD084A0AF7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B8DAAAD01E1E39F10061011E /* DateHelper.swift */,
+				B8DAAACD1E1E389A0061011E /* MultiLanguageSupport.swift */,
 				1CAB43D5F83400DA45FAE4020481D732 /* PSDatePicker.swift */,
 			);
 			path = Classes;
@@ -449,7 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E392BE88E7A680697CC320F10B94A9D /* PSDatePicker-dummy.m in Sources */,
+				B824EA791E1E3CA300D6A237 /* DateHelper.swift in Sources */,
 				3A2D6810ED2AB2996A53AE19F969EE31 /* PSDatePicker.swift in Sources */,
+				B824EA781E1E3CA000D6A237 /* MultiLanguageSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +467,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DAAAD11E1E39F10061011E /* DateHelper.swift in Sources */,
 				DBE654681A4FF66EF4F3F99B455622E8 /* Pods-PSDatePicker_Example-dummy.m in Sources */,
+				B8DAAACE1E1E389A0061011E /* MultiLanguageSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

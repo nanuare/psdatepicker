@@ -51,7 +51,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5W-U9-HTa" userLabel="bg">
                                 <rect key="frame" x="30" y="60" width="315" height="467"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="att-qi-pn0">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="att-qi-pn0" userLabel="bgTitle">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1us-2d-IYh" userLabel="lbTitle">
@@ -388,9 +388,36 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="bgAll" destination="N5W-U9-HTa" id="wZP-sm-0Kx"/>
+                        <outlet property="bgDatePick" destination="uRs-NL-KM1" id="Fwp-74-NuT"/>
+                        <outlet property="bgSeperator" destination="DmG-sc-Qae" id="OxC-8s-6yy"/>
+                        <outlet property="bgTimePick" destination="hE3-gc-SEO" id="zYy-sy-fJT"/>
+                        <outlet property="bgTitle" destination="att-qi-pn0" id="pVR-KP-84q"/>
                         <outlet property="bgTranslucency" destination="VOk-NZ-wG6" id="c8X-eQ-Y0Q"/>
                         <outlet property="btnCancel" destination="lY9-Yc-TQc" id="wcU-Sk-pX2"/>
                         <outlet property="btnConfirm" destination="FaF-fy-GYw" id="ITQ-yj-B27"/>
+                        <outlet property="btnDay1" destination="2K0-HE-thB" id="vrW-j2-q6U"/>
+                        <outlet property="btnDay2" destination="u4u-Pc-W9S" id="MY2-LS-Uek"/>
+                        <outlet property="btnDay3" destination="Zp9-AX-6ho" id="Sey-qo-JWJ"/>
+                        <outlet property="btnDay4" destination="Kho-g8-4Bg" id="QfV-CB-xYr"/>
+                        <outlet property="btnDay5" destination="B7Z-0F-F8P" id="GgB-K1-P8a"/>
+                        <outlet property="btnDay6" destination="xji-Uz-0dN" id="dcr-iu-Vxx"/>
+                        <outlet property="btnDay7" destination="zgf-gc-t4l" id="KNV-Lg-xbF"/>
+                        <outlet property="btnLastWeek" destination="uvr-tv-uq0" id="9lg-56-9RG"/>
+                        <outlet property="btnMonth" destination="QqQ-0d-uje" id="dgW-L3-gQD"/>
+                        <outlet property="btnNextWeek" destination="Pv1-K0-uX0" id="Itr-Wo-rrx"/>
+                        <outlet property="lbFinish" destination="Mbp-xO-0ld" id="sCj-qH-g0B"/>
+                        <outlet property="lbStart" destination="ILr-hB-inE" id="v2O-6Q-bqW"/>
+                        <outlet property="lbTitle" destination="1us-2d-IYh" id="rar-YP-RU8"/>
+                        <outlet property="lbTitleTime" destination="oWD-HE-xff" id="f1O-41-Etq"/>
+                        <outlet property="lbWeek1" destination="P2f-Kf-oj0" id="xdQ-kS-qdK"/>
+                        <outlet property="lbWeek2" destination="0w8-VM-7VV" id="Aot-pa-S7H"/>
+                        <outlet property="lbWeek3" destination="Hcd-fS-BgB" id="FXs-tv-Yoc"/>
+                        <outlet property="lbWeek4" destination="Nel-DG-aKC" id="ELW-WC-DZ5"/>
+                        <outlet property="lbWeek5" destination="Sam-TU-BS4" id="fb6-Yp-8no"/>
+                        <outlet property="lbWeek6" destination="fib-Jk-Lbg" id="9DC-Wm-yec"/>
+                        <outlet property="lbWeek7" destination="K8n-DI-7ZP" id="v8S-9K-zmh"/>
+                        <outlet property="pvFinish" destination="NmJ-lw-WIL" id="Jix-F1-IQu"/>
+                        <outlet property="pvStart" destination="efT-8g-3uC" id="PhC-sc-xp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jG5-rR-CSo" userLabel="First Responder" sceneMemberID="firstResponder"/>

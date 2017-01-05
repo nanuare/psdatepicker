@@ -18,12 +18,50 @@ public class PSDatePicker:UIViewController {
     
     @IBOutlet weak var bgAll: UIView!
     @IBOutlet weak var bgTranslucency: UIView!
+
+    @IBOutlet weak var bgTitle: UIView!
+    @IBOutlet weak var bgDatePick: UIView!
+    @IBOutlet weak var bgSeperator: UIView!
+    @IBOutlet weak var bgTimePick: UIView!
     
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbTitleDate: UILabel!
+    @IBOutlet weak var lbTitleTime: UILabel!
     
+    @IBOutlet weak var btnMonth: UIButton!
+    @IBOutlet weak var btnLastWeek: UIButton!
+    @IBOutlet weak var btnNextWeek: UIButton!
+    
+    @IBOutlet weak var lbWeek1: UILabel!
+    @IBOutlet weak var lbWeek2: UILabel!
+    @IBOutlet weak var lbWeek3: UILabel!
+    @IBOutlet weak var lbWeek4: UILabel!
+    @IBOutlet weak var lbWeek5: UILabel!
+    @IBOutlet weak var lbWeek6: UILabel!
+    @IBOutlet weak var lbWeek7: UILabel!
+    
+    @IBOutlet weak var btnDay1: UIButton!
+    @IBOutlet weak var btnDay2: UIButton!
+    @IBOutlet weak var btnDay3: UIButton!
+    @IBOutlet weak var btnDay4: UIButton!
+    @IBOutlet weak var btnDay5: UIButton!
+    @IBOutlet weak var btnDay6: UIButton!
+    @IBOutlet weak var btnDay7: UIButton!
+
+    @IBOutlet weak var lbStart: UILabel!
+    @IBOutlet weak var lbFinish: UILabel!
+    
+    @IBOutlet weak var pvStart: UIPickerView!
+    @IBOutlet weak var pvFinish: UIPickerView!
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.initViews()
+    }
+    
+    override public func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.initDates()
     }
     
    
@@ -36,7 +74,9 @@ extension PSDatePicker {
     func initViews() {
         self.btnConfirm.layer.cornerRadius = 4
         self.btnCancel .layer.cornerRadius = 4
-        
+    }
+    
+    func initDates() {
         
     }
 }
