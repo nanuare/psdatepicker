@@ -9,7 +9,6 @@
 import UIKit
 
 class DateHelper {
-    static var dateLocale:Country = .jp
     
     static func dateFormatChanger(datetime:String, fromDateType:String, toDateType:String) -> String {
         var formatter   = DateHelper.getDefaultDateFormat(fromDateType)
@@ -25,7 +24,7 @@ class DateHelper {
         
         // 端末の設定による出力形式の差を解消
         formatter.calendar   = Calendar.init(identifier: Calendar.Identifier.gregorian)
-        formatter.locale     = Locale(identifier: Word.getLocale(country: dateLocale))
+        formatter.locale     = Locale(identifier: Word.getLocale(country: language))
         formatter.timeZone   = TimeZone.current
         formatter.dateFormat = format
         

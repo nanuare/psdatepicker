@@ -12,6 +12,11 @@ let MODULE_NAME = "PSDatePicker"
 let SB_PSDATE   = "PSDateSB"
 
 public class PSDatePicker:UIViewController {
+    /**
+     *  Device size
+     */
+    let DEVICE_WIDTH    = UIScreen.main.bounds.size.width
+    let DEVICE_HEIGHT   = UIScreen.main.bounds.size.height
    
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
@@ -54,6 +59,13 @@ public class PSDatePicker:UIViewController {
     @IBOutlet weak var pvStart: UIPickerView!
     @IBOutlet weak var pvFinish: UIPickerView!
     
+    @IBOutlet weak var bgSelected: UIView!
+    
+    open var startOfWeek:Week = .mon
+    var selectedDate:Date = Date()
+    let monthBlockSize = ((UIScreen.main.bounds.size.width - 80) / 7 ) - 6
+    
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.initViews()
@@ -64,7 +76,12 @@ public class PSDatePicker:UIViewController {
         self.initDates()
     }
     
-   
+    
+    @IBAction func goDates(_ sender: UIButton) {
+        print(sender.tag)
+        
+    }
+    
    
     
 }
@@ -74,10 +91,39 @@ extension PSDatePicker {
     func initViews() {
         self.btnConfirm.layer.cornerRadius = 4
         self.btnCancel .layer.cornerRadius = 4
+        self.bgSelected.layer.cornerRadius = monthBlockSize / 2
+        
+        language = .ko
     }
     
     func initDates() {
-        self.btnMonth.setTitle("\(DateHelper.getMonth(date: Date()))", for: .normal)
+        self.setTodayDate()
+        
+        self.btnLastWeek.setTitle(Word.lastWeek, for: .normal)
+        self.btnNextWeek.setTitle(Word.nextWeek, for: .normal)
+        
+        let startIndex = startOfWeek.rawValue
+        self.lbWeek1.text = Week.allValues[(startIndex  ) % 7].toString()
+        self.lbWeek2.text = Week.allValues[(startIndex+1) % 7].toString()
+        self.lbWeek3.text = Week.allValues[(startIndex+2) % 7].toString()
+        self.lbWeek4.text = Week.allValues[(startIndex+3) % 7].toString()
+        self.lbWeek5.text = Week.allValues[(startIndex+4) % 7].toString()
+        self.lbWeek6.text = Week.allValues[(startIndex+5) % 7].toString()
+        self.lbWeek7.text = Week.allValues[(startIndex+6) % 7].toString()
+        
+        self.lbStart .text = Word.start
+        self.lbFinish.text = Word.finish
+        
+        self.btnConfirm.setTitle(Word.confirm, for: .normal)
+        self.btnCancel .setTitle(Word.cancel , for: .normal)
+    }
+    
+    func setTodayDate() {
+        let month:Month = Month(rawValue: DateHelper.getMonth(date: Date()))!
+        self.btnMonth.setTitle("\(month.toString())", for: .normal)
+        
+        self.lbTitleDate.text = DateHelper.date2String(date: Date(), toFormat: Word.getDateFormat())
+        self.lbTitleTime.text = DateHelper.date2String(date: Date(), toFormat: Word.getTimeFormat())
     }
 }
 
