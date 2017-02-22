@@ -29,11 +29,19 @@ public class PSDatePicker:UIViewController {
 
     let monthBlockSize = ((UIScreen.main.bounds.size.width - 60 - 20) / 7 )
     open static var timeInterval = 15
+    // startTime of time list
     open static var startTime:Date? = nil
+    // finish of time list
     open static var finishTime:Date? = nil
+    
+    open static var selectedTimeStart:Date? = nil
+    open static var selectedTimeFinished:Date? = nil
+    
     open static var startOfWeek:Week = .mon
-    open static var isTimeAutoSelect = true
     open static var delegate:DatePickerDelegate? = nil
+    
+    open static var title:String = ""
+    open static var titleBgColor:UIColor = PSDatePicker.getHexColor(0x193441)
     
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
@@ -82,8 +90,6 @@ public class PSDatePicker:UIViewController {
     
     var displayDate :Date = Date()
     var selectedDate:Date = Date()
-    var selectedTimeStart   :(hour:Int,min:Int) = (0,0)
-    var selectedTimeFinish  :(hour:Int,min:Int) = (0,0)
     
     var btnDates:[UIButton] = []
     
@@ -95,6 +101,9 @@ public class PSDatePicker:UIViewController {
     
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.lbTitle.text = PSDatePicker.title
+        self.bgTitle.backgroundColor = PSDatePicker.titleBgColor
+        
         self.initDates()
     }
     
@@ -251,7 +260,7 @@ extension PSDatePicker {
         
         //Btnたちの初期化
         for btn in self.btnDates {
-            btn.setTitleColor(self.getHexColor(0x007AFF), for: .normal)
+            btn.setTitleColor(PSDatePicker.getHexColor(0x007AFF), for: .normal)
             btn.isSelected = false
         }
         self.bgSelected.isHidden = true
@@ -331,7 +340,7 @@ extension PSDatePicker {
         
         //Btnsの初期化
         for btn in self.btnDates {
-            btn.setTitleColor(self.getHexColor(0x007AFF), for: .normal)
+            btn.setTitleColor(PSDatePicker.getHexColor(0x007AFF), for: .normal)
             btn.isSelected = false
         }
         
@@ -426,14 +435,32 @@ extension PSDatePicker {
     }
     
     fileprivate func setupSelectedTime(){
-        if !PSDatePicker.isTimeAutoSelect {
-            PSDatePicker.isTimeAutoSelect = true
+        if let fromDate = PSDatePicker.selectedTimeStart{
+            
+            let toDate = PSDatePicker.selectedTimeFinished
+            let fromTime:(hour:Int,min:Int) = DateHelper.getTimes24(date: fromDate)
+            let toTime:(hour:Int,min:Int) = DateHelper.getTimes24(date: toDate!)
+            
+            let startTimeHour:Int = DateHelper.getHour24(date: PSDatePicker.startTime!)
+            let finishTimeHour:Int = DateHelper.getHour24(date: PSDatePicker.finishTime!)
+            
+            if fromTime.hour < startTimeHour {
+                self.pvStart .selectRow(0, inComponent: 0, animated: false)
+                self.pvFinish.selectRow(60/PSDatePicker.timeInterval, inComponent: 0, animated: false)
+            } else if fromTime.hour > finishTimeHour {
+                self.pvStart .selectRow(self.selectableTimes.count, inComponent: 0, animated: false)
+                self.pvFinish.selectRow(self.selectableTimes.count, inComponent: 0, animated: false)
+            } else {
+                self.pvStart .selectRow(((fromTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (fromTime.min / PSDatePicker.timeInterval), inComponent: 0, animated: false)
+                self.pvFinish.selectRow(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval), inComponent: 0, animated: false)
+            }
+
         } else if self.isToday(self.selectedDate) {
             self.pvStart .selectRow(0, inComponent: 0, animated: false)
             self.pvFinish.selectRow(4, inComponent: 0, animated: false)
-        } else if self.getNowIndex()+4 <= self.selectableTimes.count {
+        } else if self.getNowIndex()+(60/PSDatePicker.timeInterval) <= self.selectableTimes.count {
             self.pvStart .selectRow(self.getNowIndex()  , inComponent: 0, animated: false)
-            self.pvFinish.selectRow(self.getNowIndex()+4, inComponent: 0, animated: false)
+            self.pvFinish.selectRow(self.getNowIndex()+(60/PSDatePicker.timeInterval), inComponent: 0, animated: false)
         }
     }
     
@@ -471,7 +498,7 @@ extension PSDatePicker {
         return storyboard.instantiateViewController(withIdentifier: vcName)
     }
     
-    fileprivate func getHexColor(_ hexColor:Int)->UIColor {
+    fileprivate static func getHexColor(_ hexColor:Int)->UIColor {
         let red     = (hexColor >> 16) & 0xff
         let green   = (hexColor >> 8) & 0xff
         let blue    = hexColor & 0xff
@@ -483,7 +510,7 @@ extension PSDatePicker {
         return UIColor.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     }
     
-    open func timeAdjustByTimeInterval(hour:Int,min:Int)->(Int,Int){
+    fileprivate func timeAdjustByTimeInterval(hour:Int,min:Int)->(Int,Int){
         if min % PSDatePicker.timeInterval == 0 {
             return (hour,min)
         } else if min > (60 - PSDatePicker.timeInterval) {
@@ -492,7 +519,6 @@ extension PSDatePicker {
             return (hour,min + PSDatePicker.timeInterval - (min % PSDatePicker.timeInterval))
         }
     }
-    
     
     /// タイムリストから現在と一番近いIndexwo返す
     ///
@@ -525,6 +551,15 @@ extension PSDatePicker {
     open static func showDatePicker(_ target:UIViewController){
         let vc = PSDatePicker.getViewController()
         target.present(vc, animated: true, completion: nil)
+    }
+    
+    open static func showDatePicker(_ target:UIViewController, title:String, bgTitleColor:UIColor){
+        let vc = PSDatePicker.getViewController()
+        PSDatePicker.title = title
+        PSDatePicker.titleBgColor = bgTitleColor
+        
+        target.present(vc, animated: true, completion: nil)
+        
     }
 }
 
