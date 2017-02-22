@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UGg-sM-HBo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UGg-sM-HBo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2048" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,14 +62,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00月00日 日曜日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfQ-AJ-K7k" userLabel="lbDate">
-                                                <rect key="frame" x="10" y="10" width="140" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <rect key="frame" x="10" y="10" width="160.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00時 00分 から 00時 00分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="oWD-HE-xff" userLabel="lbTime">
-                                                <rect key="frame" x="10" y="37" width="243" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <rect key="frame" x="10" y="39" width="216" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -97,14 +97,26 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqQ-0d-uje">
                                                         <rect key="frame" x="98.5" y="9" width="98" height="30"/>
                                                         <state key="normal" title="00月"/>
+                                                        <connections>
+                                                            <action selector="goToday:" destination="UGg-sM-HBo" eventType="touchUpInside" id="EKr-RQ-chC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvr-tv-uq0">
                                                         <rect key="frame" x="0.0" y="9" width="31" height="30"/>
                                                         <state key="normal" title="先週"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="goLastWeek:" destination="UGg-sM-HBo" eventType="touchUpInside" id="nfX-K2-pbL"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv1-K0-uX0">
                                                         <rect key="frame" x="264" y="9" width="31" height="30"/>
                                                         <state key="normal" title="来週"/>
+                                                        <connections>
+                                                            <action selector="goNextWeek:" destination="UGg-sM-HBo" eventType="touchUpInside" id="nBt-1W-IgR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +212,7 @@
                                                 <rect key="frame" x="10" y="82.5" width="295" height="66.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8w-9k-PwF" userLabel="bgSelected">
-                                                        <rect key="frame" x="3" y="14.5" width="36" height="36"/>
+                                                        <rect key="frame" x="0.0" y="11.5" width="42" height="42"/>
                                                         <color key="backgroundColor" red="0.92941176469999998" green="0.49019607840000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="l8w-9k-PwF" secondAttribute="height" id="ADd-VN-n3d"/>
@@ -208,7 +220,11 @@
                                                     </view>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2K0-HE-thB" userLabel="Day1">
                                                         <rect key="frame" x="0.0" y="-0.5" width="42" height="66.5"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" title="01"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="yfP-1S-owJ"/>
                                                         </connections>
@@ -216,6 +232,9 @@
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4u-Pc-W9S" userLabel="Day2">
                                                         <rect key="frame" x="42" y="-0.5" width="42" height="66.5"/>
                                                         <state key="normal" title="02"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="L1S-H1-hUP"/>
                                                         </connections>
@@ -223,6 +242,9 @@
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zp9-AX-6ho" userLabel="Day3">
                                                         <rect key="frame" x="84" y="0.0" width="42" height="66.5"/>
                                                         <state key="normal" title="03"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="HVw-Qa-vw6"/>
                                                         </connections>
@@ -230,6 +252,9 @@
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kho-g8-4Bg" userLabel="Day4">
                                                         <rect key="frame" x="126" y="-0.5" width="42" height="66.5"/>
                                                         <state key="normal" title="04"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="WDW-CT-qS4"/>
                                                         </connections>
@@ -237,6 +262,9 @@
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7Z-0F-F8P" userLabel="Day5">
                                                         <rect key="frame" x="168" y="0.0" width="42" height="66.5"/>
                                                         <state key="normal" title="05"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="7rP-xA-8f5"/>
                                                         </connections>
@@ -244,6 +272,9 @@
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xji-Uz-0dN" userLabel="Day6">
                                                         <rect key="frame" x="210" y="0.0" width="42" height="66.5"/>
                                                         <state key="normal" title="06"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="jjw-3w-2t8"/>
                                                         </connections>
@@ -251,6 +282,9 @@
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-gc-t4l" userLabel="Day7">
                                                         <rect key="frame" x="252" y="0.0" width="42" height="66.5"/>
                                                         <state key="normal" title="07"/>
+                                                        <state key="disabled">
+                                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="goDates:" destination="UGg-sM-HBo" eventType="touchUpInside" id="uuB-oB-cJe"/>
                                                         </connections>
@@ -276,9 +310,9 @@
                                                     <constraint firstItem="Kho-g8-4Bg" firstAttribute="centerY" secondItem="GED-QZ-QCu" secondAttribute="centerY" id="mkZ-FA-udN"/>
                                                     <constraint firstItem="2K0-HE-thB" firstAttribute="height" secondItem="GED-QZ-QCu" secondAttribute="height" id="n6a-O2-wvJ"/>
                                                     <constraint firstItem="B7Z-0F-F8P" firstAttribute="centerY" secondItem="GED-QZ-QCu" secondAttribute="centerY" id="nNT-AI-53k"/>
-                                                    <constraint firstItem="l8w-9k-PwF" firstAttribute="width" secondItem="2K0-HE-thB" secondAttribute="width" constant="-6" id="njd-HX-Yax"/>
+                                                    <constraint firstItem="l8w-9k-PwF" firstAttribute="width" secondItem="2K0-HE-thB" secondAttribute="width" id="njd-HX-Yax"/>
                                                     <constraint firstItem="xji-Uz-0dN" firstAttribute="centerY" secondItem="GED-QZ-QCu" secondAttribute="centerY" id="o7m-C4-4RI"/>
-                                                    <constraint firstItem="l8w-9k-PwF" firstAttribute="leading" secondItem="GED-QZ-QCu" secondAttribute="leading" constant="3" id="r2W-oV-nvV"/>
+                                                    <constraint firstItem="l8w-9k-PwF" firstAttribute="leading" secondItem="GED-QZ-QCu" secondAttribute="leading" id="r2W-oV-nvV"/>
                                                     <constraint firstItem="zgf-gc-t4l" firstAttribute="centerY" secondItem="GED-QZ-QCu" secondAttribute="centerY" id="ufs-Uj-vbL"/>
                                                     <constraint firstItem="B7Z-0F-F8P" firstAttribute="height" secondItem="Kho-g8-4Bg" secondAttribute="height" id="vrk-iH-ekj"/>
                                                 </constraints>
@@ -450,6 +484,7 @@
                         <outlet property="lbWeek5" destination="Sam-TU-BS4" id="fb6-Yp-8no"/>
                         <outlet property="lbWeek6" destination="fib-Jk-Lbg" id="9DC-Wm-yec"/>
                         <outlet property="lbWeek7" destination="K8n-DI-7ZP" id="v8S-9K-zmh"/>
+                        <outlet property="lcBgDateSelectLeading" destination="r2W-oV-nvV" id="EUv-7e-k1Z"/>
                         <outlet property="pvFinish" destination="NmJ-lw-WIL" id="Jix-F1-IQu"/>
                         <outlet property="pvStart" destination="efT-8g-3uC" id="PhC-sc-xp3"/>
                     </connections>

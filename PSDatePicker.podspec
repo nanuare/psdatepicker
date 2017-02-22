@@ -5,10 +5,11 @@
 # Any lines starting with a # are optional, but their use is encouraged
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
 #
+# 
 
 Pod::Spec.new do |s|
   s.name             = 'PSDatePicker'
-  s.version          = '0.2.0'
+  s.version          = '0.8.0'
   s.summary          = 'This cocoapods is for date picking.'
 
 # This description is used to generate tags and improve search results.

@@ -90,15 +90,15 @@ enum Month :Int {
 }
 
 public enum Week :Int {
-    case mon
-    case tue
-    case wed
-    case thu
-    case fri
-    case sat
-    case sun
-    
-    static let allValues = [mon, tue, wed, thu, fri, sat, sun]
+    case mon = 2
+    case tue = 3
+    case wed = 4
+    case thu = 5
+    case fri = 6
+    case sat = 0
+    case sun = 1
+
+    static let allValues = [sat, sun, mon, tue, wed, thu, fri]
     
     func toString()->String {
         switch language {
@@ -251,12 +251,12 @@ class Word {
         }
     }
     
-    static func getTimeFormat()->String{
+    static func getTimeFormat(timeFrom:(hour:Int,min:Int), timeTo:(hour:Int,min:Int))->String{
+        
         switch language {
-        case .en : return "hhHour mmMin hhHour mmMin"
-        case .ko : return "hh시 mm분 - hh시 mm분"
-        case .jp : return "hh時 mm分 - hh時 mm分"
+        case .en : return String(format:"%02d:%02d ~ %02d:%02d"    ,timeFrom.hour,timeFrom.min,timeTo.hour,timeTo.min)
+        case .ko : return String(format:"%d시 %02d분부터 %d시 %02d분"    ,timeFrom.hour,timeFrom.min,timeTo.hour,timeTo.min)
+        case .jp : return String(format:"%d時 %02d分から %d時 %02d分"    ,timeFrom.hour,timeFrom.min,timeTo.hour,timeTo.min)
         }
     }
-    
 }

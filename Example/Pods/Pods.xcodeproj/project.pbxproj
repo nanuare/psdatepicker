@@ -44,16 +44,16 @@
 /* Begin PBXFileReference section */
 		07090D72D783BC25437B6BA8910F2575 /* Pods-PSDatePicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PSDatePicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1773E14BC7865B26C0207556F0AE6AFF /* Pods-PSDatePicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Tests-resources.sh"; sourceTree = "<group>"; };
-		38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; path = PSDateSB.storyboard; sourceTree = "<group>"; };
+		38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = PSDateSB.storyboard; sourceTree = "<group>"; };
 		42B4283AF6239808F93F4FAA4B4EF989 /* PSDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSDatePicker-prefix.pch"; sourceTree = "<group>"; };
 		44C3E9453A62CF4CCF2F8BA1E8B23002 /* Pods-PSDatePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		461A73327B7A4621E185DB78CF014701 /* PSDatePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PSDatePicker.modulemap; sourceTree = "<group>"; };
+		461A73327B7A4621E185DB78CF014701 /* PSDatePicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PSDatePicker.modulemap; sourceTree = "<group>"; };
 		4AF23058D5F71908EA7926E31B3F9940 /* Pods-PSDatePicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PSDatePicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		4B51E36B9EDBE53ED692F5940A380CF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CFC246BA8ADC5F5EF404C95017A8416 /* MultiLanguageSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MultiLanguageSupport.swift; sourceTree = "<group>"; };
 		615844729113BDC3665E40D3E425AE3E /* Pods-PSDatePicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PSDatePicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		61A9B6D1EC7A692E69A64DA2E0173533 /* Pods_PSDatePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PSDatePicker_Example.framework; path = "Pods-PSDatePicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61A9B6D1EC7A692E69A64DA2E0173533 /* Pods_PSDatePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSDatePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64527E068A43713AC1AD4835138A50EF /* Pods-PSDatePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E72860FBD3843FD96BDCF9361218260 /* Pods-PSDatePicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PSDatePicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		765A59AC67C08B1545FA04406DEBB3E1 /* Pods-PSDatePicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -62,8 +62,8 @@
 		8A79EB9E6B58295D5BFA74F5D720B56C /* Pods-PSDatePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PSDatePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8A871F6A10810FAF3CD3777D6C188C35 /* DateHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		8B6F0D761DA7492067C944F9A34805F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E2BD1FF0C52A1F5538A5B30355EE574 /* Pods-PSDatePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PSDatePicker_Tests.modulemap"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8E2BD1FF0C52A1F5538A5B30355EE574 /* Pods-PSDatePicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PSDatePicker_Tests.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB9C43BCB74ED9D4F5E7780FB335E863 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC66995EC40EDAF9CD8ECCCDA8167480 /* PSDatePicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PSDatePicker.swift; sourceTree = "<group>"; };
 		B6C04B6B1C774E2678F075110060FFDC /* Pods-PSDatePicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PSDatePicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -74,12 +74,12 @@
 		D0667C90B6250E8D8F645BCD2AEA64CD /* PSDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PSDatePicker.xcconfig; sourceTree = "<group>"; };
 		D56C0F650737ED71B2B542D9BE47968A /* Pods-PSDatePicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PSDatePicker_Example-dummy.m"; sourceTree = "<group>"; };
 		DAD29ECF2A3C9DFB97299BE9387D53A4 /* Pods-PSDatePicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PSDatePicker_Tests-umbrella.h"; sourceTree = "<group>"; };
-		E74CFF50DC17922E87B3948B36F71BB6 /* PSDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PSDatePicker.framework; path = PSDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC53C227B8B4E0DF21B34E1382E54BF6 /* PSDatePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = PSDatePicker.bundle; path = PSDatePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E74CFF50DC17922E87B3948B36F71BB6 /* PSDatePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PSDatePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC53C227B8B4E0DF21B34E1382E54BF6 /* PSDatePicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSDatePicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8455118DB2CD4D9BA0A92A25008BE0 /* Pods-PSDatePicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PSDatePicker_Example-resources.sh"; sourceTree = "<group>"; };
 		ECAEE63FA37799BBC363838D2FDF3381 /* PSDatePicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PSDatePicker-umbrella.h"; sourceTree = "<group>"; };
-		EE54FBF191A6452C09886E41D5B9EA84 /* Pods_PSDatePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PSDatePicker_Tests.framework; path = "Pods-PSDatePicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAC130887D6A242939537F323325135F /* Pods-PSDatePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PSDatePicker_Example.modulemap"; sourceTree = "<group>"; };
+		EE54FBF191A6452C09886E41D5B9EA84 /* Pods_PSDatePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSDatePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC130887D6A242939537F323325135F /* Pods-PSDatePicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PSDatePicker_Example.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,6 @@
 			children = (
 				38DC83F558FB2C862E80590A52D49E91 /* PSDateSB.storyboard */,
 			);
-			name = Assets;
 			path = Assets;
 			sourceTree = "<group>";
 		};
@@ -179,7 +178,6 @@
 				4CFC246BA8ADC5F5EF404C95017A8416 /* MultiLanguageSupport.swift */,
 				AC66995EC40EDAF9CD8ECCCDA8167480 /* PSDatePicker.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -188,7 +186,6 @@
 			children = (
 				5D7ADDC891905268EEE4E0D6EA6E8F75 /* Classes */,
 			);
-			name = PSDatePicker;
 			path = PSDatePicker;
 			sourceTree = "<group>";
 		};
@@ -212,7 +209,6 @@
 			children = (
 				5B07B8327274E3DE0F4D4BD53ECA956D /* Assets */,
 			);
-			name = PSDatePicker;
 			path = PSDatePicker;
 			sourceTree = "<group>";
 		};
@@ -391,6 +387,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					81E7206463F667413EBB997AFFACD487 = {
+						LastSwiftMigration = 0820;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -488,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C2D2F5892F804184ACD941813F967B40 /* Pods-PSDatePicker_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -514,6 +516,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -524,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44C3E9453A62CF4CCF2F8BA1E8B23002 /* Pods-PSDatePicker_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -549,6 +553,7 @@
 				PRODUCT_NAME = Pods_PSDatePicker_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

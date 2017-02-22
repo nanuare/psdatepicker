@@ -24,6 +24,41 @@ class ViewController: UIViewController {
     @IBAction func goButton(_ sender: UIButton) {
         PSDatePicker.showDatePicker(self)
     }
+    @IBAction func goMon(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .mon
+        PSDatePicker.showDatePicker(self)
+    }
+    
+    @IBAction func goTue(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .tue
+        PSDatePicker.showDatePicker(self)
+    }
+    @IBAction func goSat(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .sat
+        PSDatePicker.showDatePicker(self)
+    }
+    @IBAction func goSun(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .sun
+        PSDatePicker.showDatePicker(self)
+    }
+    @IBAction func goFri(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .fri
+        PSDatePicker.showDatePicker(self)
+    }
+    
+    @IBAction func goWed(_ sender: UIButton) {
+        PSDatePicker.startOfWeek = .wed
+        PSDatePicker.showDatePicker(self)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
 

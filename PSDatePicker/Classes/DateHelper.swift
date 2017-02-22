@@ -81,8 +81,12 @@ class DateHelper {
         return Int(DateHelper.date2String(date: date, toFormat: "dd"))!
     }
     
-    static func getHour(date:Date)->Int{
+    static func getHour12(date:Date)->Int{
         return Int(DateHelper.date2String(date: date, toFormat: "hh"))!
+    }
+    
+    static func getHour24(date:Date)->Int{
+        return Int(DateHelper.date2String(date: date, toFormat: "HH"))!
     }
     
     static func getMinute(date:Date)->Int{
@@ -93,8 +97,12 @@ class DateHelper {
         return (DateHelper.getYear(date: date),DateHelper.getMonth(date: date), DateHelper.getDay(date: date))
     }
     
-    static func getTimes(date:Date)->(Int,Int){
-        return (DateHelper.getHour(date: date),DateHelper.getMinute(date: date))
+    static func getTimes12(date:Date)->(Int,Int){
+        return (DateHelper.getHour12(date: date),DateHelper.getMinute(date: date))
+    }
+    
+    static func getTimes24(date:Date)->(Int,Int){
+        return (DateHelper.getHour24(date: date),DateHelper.getMinute(date: date))
     }
     
     static func getWeekDay(date:Date)->Int{
@@ -108,6 +116,15 @@ class DateHelper {
     static func getAddingDays(date:Date, numOfDays:Int)->Date{
         return DateHelper.getDefaultDateFormat("yyyyMMdd").calendar.date(byAdding: .day, value: numOfDays, to: date)!
     }
+    
+    static func getAddingHours(date:Date, numOfHours:Int)->Date{
+        return DateHelper.getDefaultDateFormat("yyyyMMdd").calendar.date(byAdding: .hour, value: numOfHours, to: date)!
+    }
+    
+    static func getAddingMins(date:Date, numOfMins:Int)->Date{
+        return DateHelper.getDefaultDateFormat("yyyyMMdd").calendar.date(byAdding: .minute, value: numOfMins, to: date)!
+    }
+
     
     struct Formatter {
         static let timeStampFormat: DateFormatter = {
