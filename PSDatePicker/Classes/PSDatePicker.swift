@@ -136,6 +136,9 @@ extension PSDatePicker {
         language = .jp
         
         self.setStartFinishTime()
+        
+        PSDatePicker.selectedTimeStart = nil
+        PSDatePicker.selectedTimeFinished = nil
     }
     
     /// viewDidLoad　→　initViews
@@ -321,6 +324,9 @@ extension PSDatePicker {
         
         let fromDateTime = DateHelper.string2Date(dateStr: fromTime , format: "yyyy:MM:dd HH:mm")
         let toDateTime   = DateHelper.string2Date(dateStr: toTime   , format: "yyyy:MM:dd HH:mm")
+        
+        PSDatePicker.selectedTimeStart = fromDateTime
+        PSDatePicker.selectedTimeFinished = toDateTime
         
         return (from:fromDateTime,to:toDateTime)
     }
