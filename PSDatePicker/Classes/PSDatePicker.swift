@@ -296,9 +296,7 @@ extension PSDatePicker {
 /* Actions */
 extension PSDatePicker {
     @IBAction func goCancel(_ btn: UIButton) {
-        dismiss(animated: true) {
-                PSDatePicker.delegate?.dismissed(fromDate:self.getDateFromSelectedDate().from, toDate: self.getDateFromSelectedDate().to)
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     private func getDateFromSelectedDate()->(from:Date,to:Date){
@@ -320,8 +318,9 @@ extension PSDatePicker {
 
     
     @IBAction func goConfirm(_ btn: UIButton) {
-        dismiss(animated: true, completion: nil)
-        //TODO
+        dismiss(animated: true) {
+            PSDatePicker.delegate?.dismissed(fromDate:self.getDateFromSelectedDate().from, toDate: self.getDateFromSelectedDate().to)
+        }
     }
     
     

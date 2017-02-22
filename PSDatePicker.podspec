@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PSDatePicker'
-  s.version          = '0.8.0'
+  s.version          = '0.8.1'
   s.summary          = 'This cocoapods is for date picking.'
 
 # This description is used to generate tags and improve search results.
