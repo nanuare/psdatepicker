@@ -156,7 +156,7 @@ extension PSDatePicker {
         
         assert(finishTime.hour >= startTime.hour, "PSDatePicker.finishTime is invalid Hour. FinissTime should be earlier than startTime")
         
-        var x = (60/ti)*(finishTime.hour - startTime.hour) + ((finishTime.min/ti)-(startTime.min/ti))
+        let x = (60/ti)*(finishTime.hour - startTime.hour) + ((finishTime.min/ti)-(startTime.min/ti))
         
         self.selectableTimes.removeAll()
         
