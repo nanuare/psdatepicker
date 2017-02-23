@@ -307,7 +307,7 @@ extension PSDatePicker {
 /* Actions */
 extension PSDatePicker {
     @IBAction func goCancel(_ btn: UIButton) {
-        self.getDateFromSelectedDate()
+        _ = self.getDateFromSelectedDate()
         dismiss(animated: true, completion: nil)
     }
     
