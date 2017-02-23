@@ -458,6 +458,7 @@ extension PSDatePicker {
             
             self.selectedDate = fromDate!
             self.setDates(standardDate:fromDate!)
+            self.lbTitleDate.text = DateHelper.date2String(date: self.selectedDate, toFormat: Word.getDateFormat())
             
             if fromTime.hour < startTimeHour {
                 print("1 fromTime.hour < startTimeHour")
@@ -472,7 +473,6 @@ extension PSDatePicker {
                 print("selectRowStart  : \(((fromTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (fromTime.min / PSDatePicker.timeInterval))")
                 print("selectRowFinish : \(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval))")
                 
-                
                 var c = 0
                 if self.isToday(self.selectedDate) {
                     c = self.getNowIndex()
@@ -482,6 +482,7 @@ extension PSDatePicker {
                 self.pvFinish.selectRow(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval) - c, inComponent: 0, animated: false)
             }
             
+            self.timeSelected()
             PSDatePicker.needToSetTime = false
 
         } else if self.isToday(self.selectedDate) {
@@ -508,7 +509,7 @@ extension PSDatePicker {
         let startTime24  = DateHelper.getTimes24(date: startTime)
         let finishTime24 = DateHelper.getTimes24(date: finishTime)
         
-        self.lbTitleTime.text = DateHelper.date2String(date: Date(), toFormat: Word.getTimeFormat(timeFrom: startTime24, timeTo: finishTime24))
+        self.lbTitleTime.text = Word.getTimeFormat(timeFrom: startTime24, timeTo: finishTime24)
         
     }
     

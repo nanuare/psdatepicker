@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         PSDatePicker.delegate = self
+        self.tDate = self.getAddingHours(date: self.tDate, numOfHours: 1)
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,4 +87,7 @@ extension ViewController:DatePickerDelegate{
         return formatter
     }
     
+    func getAddingHours(date:Date, numOfHours:Int)->Date{
+        return self.getDefaultDateFormat("yyyyMMdd").calendar.date(byAdding: .hour, value: numOfHours, to: date)!
+    }
 }
