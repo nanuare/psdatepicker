@@ -36,6 +36,7 @@ public class PSDatePicker:UIViewController {
     
     open static var selectedTimeStart:Date? = nil
     open static var selectedTimeFinished:Date? = nil
+    open static var needToSetTime = false
     
     open static var startOfWeek:Week = .mon
     open static var delegate:DatePickerDelegate? = nil
@@ -137,8 +138,6 @@ extension PSDatePicker {
         
         self.setStartFinishTime()
         
-        PSDatePicker.selectedTimeStart = nil
-        PSDatePicker.selectedTimeFinished = nil
     }
     
     /// viewDidLoad　→　initViews
@@ -202,7 +201,7 @@ extension PSDatePicker {
         self.btnCancel .setTitle(Word.cancel , for: .normal)
         
         self.setTodayDate()
-        self.setDates(standardDate:Date())
+        self.setDates(standardDate:self.selectedDate)
         
     }
     
@@ -308,6 +307,7 @@ extension PSDatePicker {
 /* Actions */
 extension PSDatePicker {
     @IBAction func goCancel(_ btn: UIButton) {
+        self.getDateFromSelectedDate()
         dismiss(animated: true, completion: nil)
     }
     
@@ -325,8 +325,7 @@ extension PSDatePicker {
         let fromDateTime = DateHelper.string2Date(dateStr: fromTime , format: "yyyy:MM:dd HH:mm")
         let toDateTime   = DateHelper.string2Date(dateStr: toTime   , format: "yyyy:MM:dd HH:mm")
         
-        PSDatePicker.selectedTimeStart = fromDateTime
-        PSDatePicker.selectedTimeFinished = toDateTime
+        PSDatePicker.needToSetTime = true
         
         return (from:fromDateTime,to:toDateTime)
     }
@@ -334,7 +333,8 @@ extension PSDatePicker {
     
     @IBAction func goConfirm(_ btn: UIButton) {
         dismiss(animated: true) {
-            PSDatePicker.delegate?.dismissed(fromDate:self.getDateFromSelectedDate().from, toDate: self.getDateFromSelectedDate().to)
+            let selectedDate:(from:Date,to:Date) = self.getDateFromSelectedDate()
+            PSDatePicker.delegate?.dismissed(fromDate:selectedDate.from, toDate: selectedDate.to)
         }
     }
     
@@ -441,25 +441,48 @@ extension PSDatePicker {
     }
     
     fileprivate func setupSelectedTime(){
-        if let fromDate = PSDatePicker.selectedTimeStart{
-            
+
+        
+        if PSDatePicker.needToSetTime {
+            print("selectedTimeStart : \(DateHelper.date2String(date: PSDatePicker.selectedTimeStart, toFormat: "yyyy/MM/dd HH:mm"))")
+            print("selectedTimeFinished : \(DateHelper.date2String(date: PSDatePicker.selectedTimeFinished, toFormat: "yyyy/MM/dd HH:mm"))")
+            let fromDate = PSDatePicker.selectedTimeStart
             let toDate = PSDatePicker.selectedTimeFinished
-            let fromTime:(hour:Int,min:Int) = DateHelper.getTimes24(date: fromDate)
+            let fromTime:(hour:Int,min:Int) = DateHelper.getTimes24(date: fromDate!)
             let toTime:(hour:Int,min:Int) = DateHelper.getTimes24(date: toDate!)
             
             let startTimeHour:Int = DateHelper.getHour24(date: PSDatePicker.startTime!)
             let finishTimeHour:Int = DateHelper.getHour24(date: PSDatePicker.finishTime!)
             
+            print("fromTime.hour : \(fromTime.hour), startTimeHour : \(startTimeHour), finishTimeHour : \(finishTimeHour)")
+            
+            self.selectedDate = fromDate!
+            self.setDates(standardDate:fromDate!)
+            
             if fromTime.hour < startTimeHour {
+                print("1 fromTime.hour < startTimeHour")
                 self.pvStart .selectRow(0, inComponent: 0, animated: false)
                 self.pvFinish.selectRow(60/PSDatePicker.timeInterval, inComponent: 0, animated: false)
             } else if fromTime.hour > finishTimeHour {
+                print("2 fromTime.hour > finishTimeHour")
                 self.pvStart .selectRow(self.selectableTimes.count, inComponent: 0, animated: false)
                 self.pvFinish.selectRow(self.selectableTimes.count, inComponent: 0, animated: false)
             } else {
-                self.pvStart .selectRow(((fromTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (fromTime.min / PSDatePicker.timeInterval), inComponent: 0, animated: false)
-                self.pvFinish.selectRow(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval), inComponent: 0, animated: false)
+                print("3 else ")
+                print("selectRowStart  : \(((fromTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (fromTime.min / PSDatePicker.timeInterval))")
+                print("selectRowFinish : \(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval))")
+                
+                
+                var c = 0
+                if self.isToday(self.selectedDate) {
+                    c = self.getNowIndex()
+                }
+                
+                self.pvStart .selectRow(((fromTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (fromTime.min / PSDatePicker.timeInterval) - c, inComponent: 0, animated: false)
+                self.pvFinish.selectRow(((toTime.hour - startTimeHour) * (60/PSDatePicker.timeInterval)) + (toTime.min / PSDatePicker.timeInterval) - c, inComponent: 0, animated: false)
             }
+            
+            PSDatePicker.needToSetTime = false
 
         } else if self.isToday(self.selectedDate) {
             self.pvStart .selectRow(0, inComponent: 0, animated: false)

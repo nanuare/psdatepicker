@@ -77,9 +77,24 @@
                                     <action selector="goWed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vDT-85-KIW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-on-Vbt">
+                                <rect key="frame" x="10" y="276" width="355" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gyY-on-Vbt" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="PnK-Uv-0Xz"/>
+                            <constraint firstItem="gyY-on-Vbt" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="TFM-qa-OE1"/>
+                            <constraint firstItem="gyY-on-Vbt" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" constant="-20" id="btR-L2-Q6G"/>
+                            <constraint firstItem="gyY-on-Vbt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="256" id="uUv-21-6Mp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lbTime" destination="gyY-on-Vbt" id="s6G-HU-x3C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

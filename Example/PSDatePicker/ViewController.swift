@@ -11,9 +11,13 @@ import PSDatePicker
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lbTime: UILabel!
+    
+    var fDate:Date = Date()
+    var tDate:Date = Date()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        PSDatePicker.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +30,11 @@ class ViewController: UIViewController {
     }
     @IBAction func goMon(_ sender: UIButton) {
         PSDatePicker.startOfWeek = .mon
+        PSDatePicker.selectedTimeStart = self.fDate
+        PSDatePicker.selectedTimeFinished = self.tDate
+        
         PSDatePicker.showDatePicker(self)
+        
     }
     
     @IBAction func goTue(_ sender: UIButton) {
@@ -51,14 +59,31 @@ class ViewController: UIViewController {
         PSDatePicker.showDatePicker(self)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
+extension ViewController:DatePickerDelegate{
+    func dismissed(fromDate:Date, toDate:Date) {
+        self.lbTime.text = "\(self.date2String(date: fromDate, toFormat: "yyyy/MM/dd HH:mm")) ~ \(self.date2String(date: toDate, toFormat: "HH:mm"))"
+        self.fDate = fromDate
+        self.tDate = toDate
+        
+    }
+    
+    func date2String(date:Date!, toFormat:String!) -> String{
+        let formatter   = self.getDefaultDateFormat(toFormat)
+        return formatter.string(from: date)
+    }
+    
+    func getDefaultDateFormat(_ format:String)->DateFormatter{
+        let formatter        = DateFormatter()
+        
+        // 端末の設定による出力形式の差を解消
+        formatter.calendar   = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        formatter.locale     = Locale(identifier: "ja_JP")
+        formatter.timeZone   = TimeZone.current
+        formatter.dateFormat = format
+        
+        return formatter
+    }
+    
+}
