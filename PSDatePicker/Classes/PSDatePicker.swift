@@ -27,6 +27,8 @@ public class PSDatePicker:UIViewController {
     
     var selectableTimes:[String] = []
     
+    open static var sDate:Date = Date()
+    
     let monthBlockSize = ((UIScreen.main.bounds.size.width - 60 - 20) / 7 )
     open static var timeInterval = 15
     // startTime of time list
@@ -104,7 +106,7 @@ public class PSDatePicker:UIViewController {
         super.viewWillAppear(animated)
         self.lbTitle.text = PSDatePicker.title
         self.bgTitle.backgroundColor = PSDatePicker.titleBgColor
-        
+        PSDatePicker.sDate = PSDatePicker.getDefaultTime()
         self.initDates()
     }
     
@@ -135,6 +137,9 @@ extension PSDatePicker {
         self.btnDates.append(self.btnDay7)
         
         language = .jp
+        
+        PSDatePicker.sDate = PSDatePicker.getDefaultTime()
+        
         
         self.setStartFinishTime()
         
@@ -208,7 +213,7 @@ extension PSDatePicker {
     /// 本日以前の日は選択できないようにする
     private func disableSelectTheDayBeforeOfToday(index:Int, btnDate:(year:Int,month:Int,day:Int)){
         //本日以前の日は選択できないようにする
-        let toDay:(year:Int,month:Int,day:Int) = DateHelper.getDates(date:PSDatePicker.getDefaultTime())
+        let toDay:(year:Int,month:Int,day:Int) = DateHelper.getDates(date:PSDatePicker.sDate)
         
         if btnDate.year < toDay.year {
             self.btnDates[index].isEnabled = false
@@ -229,7 +234,7 @@ extension PSDatePicker {
     /// 今日の日付をタイトルに設定する
     /// view will appear -> initDatas　でのみ呼び出す
     fileprivate func setTodayDate() {
-        let standardD = PSDatePicker.getDefaultTime()
+        let standardD:Date = PSDatePicker.sDate
         self.selectedDate = standardD
         
         self.setMonth(standardDate: standardD)
@@ -401,7 +406,7 @@ extension PSDatePicker {
     ///
     /// - Parameter btn: 押されたボタン
     @IBAction func goToday(_ btn: UIButton) {
-        self.setDates(standardDate:PSDatePicker.getDefaultTime())
+        self.setDates(standardDate:PSDatePicker.sDate)
     }
 }
 
@@ -546,8 +551,8 @@ extension PSDatePicker {
     ///
     /// - Returns: TimePickerのIndex
     fileprivate func getNowIndex()->Int{
-        let hour    = DateHelper.getHour24(date: PSDatePicker.getDefaultTime())
-        let min     = DateHelper.getMinute(date: PSDatePicker.getDefaultTime())
+        let hour    = DateHelper.getHour24(date: PSDatePicker.sDate)
+        let min     = DateHelper.getMinute(date: PSDatePicker.sDate)
         
         //開始時間がNilではない場合
         if let startT = PSDatePicker.startTime {
@@ -585,6 +590,7 @@ extension PSDatePicker {
     }
     
     open static func getDefaultTime()->Date{
+        
         var d = Date()
         let hm:(hour:Int,min:Int) = DateHelper.getTimes24(date: d)
         let finishHour = DateHelper.getHour24(date: PSDatePicker.finishTime!)
@@ -594,15 +600,14 @@ extension PSDatePicker {
             d = DateHelper.getAddingHours(date: d, numOfHours: 3)
             let ymd:(year:Int,month:Int,day:Int) = DateHelper.getDates(date: d)
             let formattedStr = String(format: "%04d%02d%02d%02d55", ymd.year,ymd.month,ymd.day,startHour-1)
-            d = DateHelper.string2Date(dateStr: formattedStr, format: "yyyyMMddHHmm")
+            return DateHelper.string2Date(dateStr: formattedStr, format: "yyyyMMddHHmm")
         } else if hm.hour < startHour {
             let ymd:(year:Int,month:Int,day:Int) = DateHelper.getDates(date: d)
             let formattedStr = String(format: "%04d%02d%02d%02d55", ymd.year,ymd.month,ymd.day,startHour-1)
-            d = DateHelper.string2Date(dateStr: formattedStr, format: "yyyyMMddHHmm")
+            return DateHelper.string2Date(dateStr: formattedStr, format: "yyyyMMddHHmm")
+        } else {
+            return Date()
         }
-        
-        return d
-        
     }
 }
 
@@ -652,9 +657,10 @@ extension PSDatePicker:UIPickerViewDelegate, UIPickerViewDataSource {
     ///
     /// - Returns: 基準日が本日かどうか
     fileprivate func isToday(_ standardDate:Date)->Bool{
-        return (DateHelper.getYear(date:standardDate)   == DateHelper.getYear(date:PSDatePicker.getDefaultTime()))
-            && (DateHelper.getMonth(date:standardDate)  == DateHelper.getMonth(date:PSDatePicker.getDefaultTime()))
-            && (DateHelper.getDay(date:standardDate)    == DateHelper.getDay(date:PSDatePicker.getDefaultTime()))
+        let sssDate = PSDatePicker.sDate
+        return (DateHelper.getYear(date:standardDate)   == DateHelper.getYear(date:sssDate))
+            && (DateHelper.getMonth(date:standardDate)  == DateHelper.getMonth(date:sssDate))
+            && (DateHelper.getDay(date:standardDate)    == DateHelper.getDay(date:sssDate))
     }
     
     private func getStartTime(_ row:Int, _ pickerView: UIPickerView)->String{
